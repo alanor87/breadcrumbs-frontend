@@ -10,7 +10,7 @@ function App() {
 
   const fetchCrumbs = async (path) => {
     const pathFormatted = path.map(locationName => locationName).join('/');
-    const response = await fetch(`https://breadcrumbs-backend.herokuapp.com/${pathFormatted}`, { method: 'GET' }).then(res => res.json());
+    const response = await fetch(`https://breadcrumbs-backend.herokuapp.com/path/${pathFormatted}`, { method: 'GET' }).then(res => res.json());
     setCrumbs(response);
   }
 
