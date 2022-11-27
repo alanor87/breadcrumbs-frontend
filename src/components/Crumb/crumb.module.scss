@@ -1,0 +1,23 @@
+.crumb {
+  color: blue;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(179, 224, 224);
+  }
+}
+
+.nav {
+  &::after {
+    content: ">";
+    display: inline-block;
+    margin-left: 15px;
+    color: black;
+    font-weight: 700;
+  }
+}
+
+.content {
+  width: fit-content;
+  font-size: 1.2em;
+}
