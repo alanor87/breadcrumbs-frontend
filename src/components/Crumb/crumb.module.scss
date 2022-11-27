@@ -8,7 +8,7 @@
 }
 
 .nav {
-  &::after {
+  &:not(:last-child)::after {
     content: ">";
     display: inline-block;
     margin-left: 15px;
