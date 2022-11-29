@@ -1,5 +1,10 @@
+
 .crumb {
+  position: relative;
+  display: flex;
+  justify-content: center;
   color: blue;
+  min-width: 100px;
 
   &:hover {
     cursor: pointer;
@@ -8,12 +13,25 @@
 }
 
 .nav {
-  &:not(:last-child)::after {
-    content: ">";
-    display: inline-block;
-    margin-left: 15px;
-    color: black;
-    font-weight: 700;
+  padding: 5px 8px;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    transform: skew(-25deg);
+  }
+  
+  &:hover {
+    background-color: inherit;
+    &::after {
+      background-color: red;
+    }
   }
 }
 

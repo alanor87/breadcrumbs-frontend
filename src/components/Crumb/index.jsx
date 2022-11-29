@@ -1,12 +1,12 @@
 import styles from './crumb.module.scss';
 
-function Crumb({ displayType, locationName, onClick }) {
+function Crumb({ type, id, locationName, onClick }) {
 
     const onclickHandle = () => {
-        onClick(locationName);
+        onClick(locationName, type, id);
     }
 
-    return <div className={styles.crumb + ' ' + (displayType === 'navigation' ? styles.nav : styles.content)} onClick={onclickHandle}>{locationName}</div>
+    return <div className={styles.crumb + ' ' + (type === 'navigation' ? styles.nav : styles.content)} onClick={onclickHandle}>{locationName}</div>
 }
 
 export { Crumb }

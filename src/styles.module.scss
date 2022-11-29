@@ -1,3 +1,14 @@
+@keyframes animateLastCrumb {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .app {
   padding: 10px;
 }
@@ -5,10 +16,20 @@
 .navigation {
   display: flex;
   justify-content: flex-start;
-  gap: 15px;
   margin-bottom: 20px;
   padding: 5px;
   border-bottom: 1px solid red;
+
+  &.animate {
+   & div:last-child:not(:only-child) {
+      animation-name: animateLastCrumb;
+      animation-duration: 250ms;
+
+      &::after {
+        background-color: teal;
+      }
+    }
+  }
 }
 
 .contents {
